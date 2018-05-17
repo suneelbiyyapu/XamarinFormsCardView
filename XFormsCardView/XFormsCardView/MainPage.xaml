@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XFormsCardView"
+             x:Class="XFormsCardView.MainPage">
+
+    <StackLayout Orientation="Vertical">
+        <Label Text="CardView Demo in Xamarin Forms"
+               FontAttributes="Bold"
+               FontSize="Medium"
+               VerticalOptions="Start"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"
+               BackgroundColor="Transparent"
+               HorizontalOptions="CenterAndExpand" />
+        <ListView x:Name="listView" 
+                  SelectedItem="{Binding SelcetedItem,Mode=TwoWay}" 
+                  HasUnevenRows="True"
+                  ItemsSource="{Binding lstUsers}" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <local:CardViewTemplate/>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
